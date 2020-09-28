@@ -6,6 +6,18 @@ media_folder: ""
 public_folder: ""
 
 collections:
+  - name: "featured"
+    label: "Featured"
+    folder: "content/Featured"
+    create: true
+    media_folder: ""
+    public_folder: ""
+    path: "{{title}}/index"
+    editor:
+      preview: true
+    fields:
+      - { label: "Name", name: "title", widget: "string"}
+      - { label: "Image", name: "image", widget: "file" }
   - name: "mains"
     label: "Mains"
     folder: "content/Mains"

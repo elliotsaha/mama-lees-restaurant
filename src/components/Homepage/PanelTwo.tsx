@@ -28,20 +28,6 @@ const useStyles = makeStyles(theme =>
       fontFamily: "Gilroy, sans-serif",
       letterSpacing: "0.75rem",
     },
-    button: {
-      color: "#CE995D",
-      fontFamily: "Gilroy",
-      letterSpacing: "0.2rem",
-    },
-    buttonActive: {
-      color: "#CE995D",
-      fontFamily: "Gilroy",
-      letterSpacing: "0.2rem",
-      fontWeight: "bold",
-    },
-    buttonContainer: {
-      marginLeft: "4rem",
-    },
   })
 )
 export default function PanelTwo() {
@@ -64,15 +50,9 @@ export default function PanelTwo() {
   return (
     <div className={classes.root}>
       <div className={classes.title}>
-        <div className={classes.sub}>Our Menu</div>
+        <div className={classes.sub}>Welcome Home</div>
         Our Authentic <br />
         and Fresh Korean Cuisines
-      </div>
-      <div className={classes.buttonContainer}>
-        <Button className={classes.button}>Mains</Button>
-        <Button className={classes.button}>Fried</Button>
-        <Button className={classes.button}>Sides</Button>
-        <Button className={classes.button}>Bento</Button>
       </div>
       
     </div>
