@@ -11,6 +11,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import "./layout.css"
 import { Helmet } from "react-helmet"
 import Navbar from "../components/Navbar"
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 const Layout = ({ children }) => {
   return (
     <div>
