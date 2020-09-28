@@ -124,7 +124,7 @@ const useStyles = makeStyles(theme =>
       fontSize: "1.2rem",
     },
     active: {
-      background: "linear-gradient(to right, #D53E48, #D53E48) no-repeat",
+      background: "linear-gradient(to right, #CE995D, #CE995D) no-repeat",
       opacity: "100%",
       paddingBottom: "0.5rem",
       backgroundSize: "30% 3px",
@@ -192,7 +192,7 @@ const useStyles = makeStyles(theme =>
       flexDirection: "row",
     },
     contactButton: {
-      background: "#D53E48",
+      background: "#CE995D",
       "&:hover": {
         background: "#BD3C44",
       },
