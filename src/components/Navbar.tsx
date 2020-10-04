@@ -116,7 +116,7 @@ const useStyles = makeStyles(theme =>
       },
     },
     nameContainer: {
-      paddingTop: "1rem",
+      paddingTop: '0.35rem',
       position: "absolute",
       paddingLeft: "2.3rem",
       fontFamily: "Gilroy, sans-serif",
@@ -228,6 +228,9 @@ const useStyles = makeStyles(theme =>
     socialIconsInner: {
       width: "2.5rem",
     },
+    logo: {
+      width: '3rem',
+    },  
   })
 )
 
@@ -235,6 +238,13 @@ export default function Navbar() {
   const data = useStaticQuery(graphql`
     query {
       instagram: file(relativePath: { eq: "instagram.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1150, quality: 85) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      logo: file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
           fluid(maxWidth: 1150, quality: 85) {
             ...GatsbyImageSharpFluid
@@ -390,7 +400,7 @@ export default function Navbar() {
     <React.Fragment>
       <AppBar position="fixed" className={scrollClass} elevation={0}>
         <div className={classes.itemContainer}>
-          <div className={classes.nameContainer}>Mama Lee's</div>
+          <div className={classes.nameContainer}><Img fluid={data.logo.childImageSharp.fluid} className={classes.logo}/></div>
           <div className={classes.linkContainer}>
             <Link
               to="/"
