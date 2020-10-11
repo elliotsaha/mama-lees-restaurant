@@ -68,9 +68,9 @@ export default function Footer() {
         <div className={classes.textBlocks}>
           TEL: (780) 498-1222
           <br />
-          MON-SAT: 11:00-8:00
+          Mon-Sat: 11:00-8:00
           <br/>
-          SUN: CLOSED
+          Sun: Closed
         </div>
         <div className={classes.textBlocks}>
           <a

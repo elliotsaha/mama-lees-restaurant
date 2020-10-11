@@ -111,13 +111,13 @@ export default function PanelOne() {
               fluid={data.image.childImageSharp.fluid}
               className={classes.image}
               loading="eager"
-              alt="404"
+              alt="thankyou"
             />
           </div>
         </div>
         <div>
           <div className={classes.text}>
-            Page Not Found{" "}
+            Thank You{" "}
             <div className={classes.buttonContainer}>
               <Link to="/" className={classes.link}>
                 <Button className={classes.button}>

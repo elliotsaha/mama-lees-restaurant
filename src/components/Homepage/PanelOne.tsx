@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme =>
     image: {
       height: "105%",
       objectFit: "cover",
-      filter: "brightness(90%)",
+      filter: "brightness(80%)",
     },
     text: {
       flexDirection: "column",
@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme =>
       lineHeight: "5.75rem",
       [theme.breakpoints.down(555)]: {
         fontSize: "3rem",
-        lineHeight: '3.5rem'
+        lineHeight: "3.5rem",
       },
     },
     sub: {
@@ -58,8 +58,8 @@ const useStyles = makeStyles(theme =>
       lineHeight: "5rem",
       [theme.breakpoints.down(555)]: {
         fontSize: "1rem",
-        lineHeight: '1.5rem',
-        padding: '1.5rem'
+        lineHeight: "1.5rem",
+        padding: "1.5rem",
       },
     },
     icon: {
@@ -68,18 +68,30 @@ const useStyles = makeStyles(theme =>
       marginRight: "1rem",
       borderRadius: "1rem",
       [theme.breakpoints.down(555)]: {
-        marginLeft: '0.6rem',
-        marginRight: '0.6rem',
-        width: '3.6rem',
+        marginLeft: "0.6rem",
+        marginRight: "0.6rem",
+        width: "3.6rem",
       },
-      transition: 'all 0.5s',
-      '&:hover': {
-        filter: 'brightness(0.75)'
+      transition: "all 0.5s",
+      "&:hover": {
+        filter: "brightness(0.75)",
       },
     },
     flexContainer: {
       display: "flex",
       flexDirection: "row",
+    },
+    location: {
+      fontSize: "1rem",
+      fontFamily: "Gilroy, sans-serif",
+      position: "absolute",
+      bottom: "3rem",
+      [theme.breakpoints.down(400)]: {
+        fontSize: '0.9rem',
+        marginLeft: "0.6rem",
+        marginRight: "0.6rem",
+
+      },
     },
   })
 )
@@ -166,6 +178,10 @@ export default function PanelOne(): JSX.Element {
                 className={classes.icon}
               />
             </a>
+          </div>
+          <div className={classes.location}>
+            10633 51 Ave NW Edmonton, AB T6H 0K8 <br />
+            Mon-Sat: 11:00-8:00 Sun: Closed
           </div>
         </div>
       </div>
