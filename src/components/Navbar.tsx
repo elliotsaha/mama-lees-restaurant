@@ -194,7 +194,7 @@ const useStyles = makeStyles(theme =>
     contactButton: {
       background: "#CE995D",
       "&:hover": {
-        background: "#BD3C44",
+        background: "#CE995D",
       },
       textTransform: "none",
       textDecoration: "none",
@@ -251,7 +251,7 @@ export default function Navbar() {
           }
         }
       }
-      twitter: file(relativePath: { eq: "twitter.png" }) {
+      facebook: file(relativePath: { eq: "facebook.png" }) {
         childImageSharp {
           fluid(maxWidth: 1150, quality: 85) {
             ...GatsbyImageSharpFluid
@@ -445,7 +445,7 @@ export default function Navbar() {
             className={classes.socialIcons}
           >
             <Img
-              fluid={data.twitter.childImageSharp.fluid}
+              fluid={data.facebook.childImageSharp.fluid}
               className={classes.socialIconsInner}
               alt="Facebook"
             />

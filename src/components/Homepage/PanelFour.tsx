@@ -32,8 +32,10 @@ const useStyles = makeStyles(theme =>
       textTransform: "uppercase",
       fontWeight: "bold",
       letterSpacing: "1rem",
+      marginLeft: '1rem',
       [theme.breakpoints.down(470)]: {
         fontSize: "1rem",
+        marginLeft: '0.5rem',
         letterSpacing: "0.5rem",
       },
     },

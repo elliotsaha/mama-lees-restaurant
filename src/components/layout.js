@@ -13,6 +13,7 @@ import { Helmet } from "react-helmet"
 import Navbar from "../components/Navbar"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import Footer from "../components/Footer"
 const Layout = ({ children }) => {
   return (
     <div>
@@ -37,6 +38,7 @@ const Layout = ({ children }) => {
       </Helmet>
       <Navbar />
       {children}
+      <Footer />
     </div>
   )
 }

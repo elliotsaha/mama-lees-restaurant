@@ -6,6 +6,7 @@ import PanelOne from "../components/Homepage/PanelOne"
 import PanelTwo from "../components/Homepage/PanelTwo"
 import PanelThree from "../components/Homepage/PanelThree"
 import PanelFour from "../components/Homepage/PanelFour"
+import PanelFive from "../components/Homepage/PanelFive"
 const IndexPage = () => (
   <Layout>
     <SEO title="Homepage" />
@@ -13,6 +14,7 @@ const IndexPage = () => (
     <PanelTwo />
     <PanelThree />
     <PanelFour />
+    <PanelFive />
   </Layout>
 )
 
