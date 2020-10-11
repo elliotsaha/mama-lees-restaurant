@@ -32,6 +32,39 @@ module.exports = {
         path: `${__dirname}/content/Featured`,
       },
     },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `bento`,
+        path: `${__dirname}/content/Bento`,
+      },
+    },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `appetizers`,
+        path: `${__dirname}/content/Appetizers`,
+      },
+    },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `chickenspecialties`,
+        path: `${__dirname}/content/ChickenSpecialties`,
+      },
+    },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `rice`,
+        path: `${__dirname}/content/Rice`,
+      },
+    },
+
     {
       resolve: 'gatsby-background-image',
       options: {

@@ -16,47 +16,8 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: "Name", name: "title", widget: "string"}
-      - { label: "Image", name: "image", widget: "file" }
-  - name: "mains"
-    label: "Mains"
-    folder: "content/Mains"
-    create: true
-    media_folder: ""
-    public_folder: ""
-    path: "{{title}}/index"
-    editor:
-      preview: true
-    fields:
       - { label: "Name", name: "title", widget: "string" }
       - { label: "Image", name: "image", widget: "file" }
-      - { label: "Short Description", name: "body", widget: "markdown" }
-  - name: "fried"
-    label: "Fried"
-    folder: "content/Fried"
-    create: true
-    media_folder: ""
-    public_folder: ""
-    path: "{{title}}/index"
-    editor:
-      preview: true
-    fields:
-      - { label: "Name", name: "title", widget: "string" }
-      - { label: "Image", name: "image", widget: "file" }
-      - { label: "Short Description", name: "body", widget: "markdown" }
-  - name: "sides"
-    label: "Sides"
-    folder: "content/Sides"
-    create: true
-    media_folder: ""
-    public_folder: ""
-    path: "{{title}}/index"
-    editor:
-      preview: true
-    fields:
-      - { label: "Name", name: "title", widget: "string" }
-      - { label: "Image", name: "image", widget: "file" }
-      - { label: "Short Description", name: "body", widget: "markdown" }
   - name: "bento"
     label: "Bento"
     folder: "content/Bento"
@@ -68,5 +29,75 @@ collections:
       preview: true
     fields:
       - { label: "Name", name: "title", widget: "string" }
-      - { label: "Image", name: "image", widget: "file" }
+      - { label: "Item Number", name: "itemnumber", widget: "string" }
+      - {
+          label: "Price (Number Only)",
+          name: "price",
+          widget: "number",
+          value_type: "float",
+        }
+      - { label: "Short Description", name: "body", widget: "markdown" }
+  - name: "appetizers"
+    label: "Appetizers"
+    folder: "content/Appetizers"
+    create: true
+    media_folder: ""
+    public_folder: ""
+    path: "{{title}}/index"
+    editor:
+      preview: true
+    fields:
+      - { label: "Item Number", name: "itemnumber", widget: "string" }
+      - { label: "Name", name: "title", widget: "string" }
+      - {
+          label: "Price (Number Only)",
+          name: "price",
+          widget: "number",
+          value_type: "float",
+        }
+      - { label: "Short Description", name: "body", widget: "markdown" }
+  - name: "rice"
+    label: "Rice"
+    folder: "content/Rice"
+    create: true
+    media_folder: ""
+    public_folder: ""
+    path: "{{title}}/index"
+    editor:
+      preview: true
+    fields:
+      - { label: "Item Number", name: "itemnumber", widget: "string" }
+      - { label: "Name", name: "title", widget: "string" }
+      - {
+          label: "Price (Number Only)",
+          name: "price",
+          widget: "number",
+          value_type: "float",
+        }
+      - { label: "Short Description", name: "body", widget: "markdown" }
+  - name: "chickenspecialties"
+    label: "Chicken Specialties"
+    folder: "content/ChickenSpecialties"
+    create: true
+    media_folder: ""
+    public_folder: ""
+    path: "{{title}}/index"
+    editor:
+      preview: true
+    fields:
+      - { label: "Item Number", name: "itemnumber", widget: "string" }
+      - { label: "Name", name: "title", widget: "string" }
+      - {
+          label: "Full Price (Number Only)",
+          name: "price",
+          widget: "number",
+          value_type: "float",
+        }
+      - {
+          label: "Half Price (Number Only)",
+          name: "halfprice",
+          widget: "number",
+          value_type: "float",
+          required: false,
+        }
       - { label: "Short Description", name: "body", widget: "markdown" }

@@ -299,17 +299,9 @@ export default function Navbar() {
       },
     },
     {
-      text: "About",
-      icon: <InfoRoundedIcon />,
-      link: "/about",
-      onClick: () => {
-        handleDrawerToggle()
-      },
-    },
-    {
-      text: "Recipes",
+      text: "Menu",
       icon: <BookRoundedIcon />,
-      link: "/recipes",
+      link: "/menu",
       onClick: () => {
         handleDrawerToggle()
       },
@@ -410,20 +402,12 @@ export default function Navbar() {
               Home
             </Link>
             <Link
-              to="/recipes"
+              to="/menu"
               className={classes.inactive}
               activeClassName={classes.active}
               partiallyActive
             >
-              Recipes
-            </Link>
-            <Link
-              to="/about"
-              className={classes.inactive}
-              activeClassName={classes.active}
-              partiallyActive
-            >
-              About
+              Menu
             </Link>
           </div>
           <Link to="/contact" className={classes.inactiveContact}>
