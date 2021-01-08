@@ -32,10 +32,10 @@ const useStyles = makeStyles(theme =>
       textTransform: "uppercase",
       fontWeight: "bold",
       letterSpacing: "1rem",
-      marginLeft: '1rem',
+      marginLeft: "1rem",
       [theme.breakpoints.down(470)]: {
         fontSize: "1rem",
-        marginLeft: '0.5rem',
+        marginLeft: "0.5rem",
         letterSpacing: "0.5rem",
       },
     },
@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme =>
       marginLeft: "auto",
       [theme.breakpoints.down(874)]: {
         gridTemplateColumns: "1fr",
-      gridTemplateRows: "1fr",
+        gridTemplateRows: "1fr",
       },
     },
     subName: {
@@ -62,7 +62,7 @@ const useStyles = makeStyles(theme =>
       lineHeight: "4.75rem",
       fontWeight: "bold",
       paddingBottom: "2.5rem",
-      paddingTop: '1.5rem',
+      paddingTop: "1.5rem",
       [theme.breakpoints.down(874)]: {
         fontSize: "3.1rem",
         lineHeight: "4rem",
@@ -78,7 +78,7 @@ const useStyles = makeStyles(theme =>
       textTransform: "uppercase",
       fontWeight: "bold",
       letterSpacing: "0.25rem",
-      marginRight: '0.5rem',
+      marginRight: "0.5rem",
       [theme.breakpoints.down(470)]: {
         fontSize: "1.3rem",
       },
@@ -137,8 +137,8 @@ const useStyles = makeStyles(theme =>
       display: "flex",
       justifyContent: "center",
       alignContent: "center",
-      paddingBottom: '0.5rem',
-      paddingTop: '0.5rem'
+      paddingBottom: "0.5rem",
+      paddingTop: "0.5rem",
     },
     bar: {
       backgroundColor: "#CE995D",
@@ -178,8 +178,8 @@ export default function PanelFour() {
         }
       }
 
-      appetizers: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/(content)/(Appetizers)/" } }
+      sideDish: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/(content)/(sideDish)/" } }
         sort: { fields: [frontmatter___itemnumber], order: ASC }
       ) {
         edges {
@@ -198,6 +198,23 @@ export default function PanelFour() {
         filter: {
           fileAbsolutePath: { regex: "/(content)/(ChickenSpecialties)/" }
         }
+        sort: { fields: [frontmatter___itemnumber], order: ASC }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              price
+              itemnumber
+              halfprice
+            }
+            rawMarkdownBody
+          }
+        }
+      }
+
+      soup: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/(content)/(soup)/" } }
         sort: { fields: [frontmatter___itemnumber], order: ASC }
       ) {
         edges {
@@ -358,8 +375,8 @@ export default function PanelFour() {
             })}
           </div>
           <div>
-            <div className={classes.subName}>Appetizers</div>
-            {data.appetizers.edges.map((obj: any) => {
+            <div className={classes.subName}>Side Dish</div>
+            {data.sideDish.edges.map((obj: any) => {
               const price = obj.node.frontmatter.price
               return (
                 <div
@@ -373,6 +390,43 @@ export default function PanelFour() {
                       </div>
                       <div className={classes.foodItemPrice}>
                         ${price.toFixed(2)}
+                      </div>
+                    </div>
+
+                    <div className={classes.foodItemNumber}>
+                      {obj.node.frontmatter.itemnumber}
+                    </div>
+                    <div>
+                      <div className={classes.foodMarkdownBody}>
+                        {obj.node.rawMarkdownBody}
+                      </div>
+                    </div>
+                    <div>
+                      <hr className={classes.bar} />
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+          <div>
+            <div className={classes.subName}>Soup</div>
+            {data.soup.edges.map((obj: any) => {
+              const price = obj.node.frontmatter["reg-price"]
+              const largePrice = obj.node.frontmatter["large-price"]
+              return (
+                <div
+                  key={obj.node.frontmatter.title}
+                  className={classes.foodItemContainer}
+                >
+                  <div className={classes.foodItem}>
+                    <div className={classes.foodItemTitleContainer}>
+                      <div className={classes.foodTitle}>
+                        {obj.node.frontmatter.title}
+                      </div>
+                      <div className={classes.foodItemPrice}>
+                        Normal: ${price.toFixed(2)} <br />
+                        Large: ${largePrice.toFixed(2)}
                       </div>
                     </div>
 

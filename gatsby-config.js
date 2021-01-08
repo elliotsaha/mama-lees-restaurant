@@ -8,7 +8,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-netlify-cms`,
-    'gatsby-plugin-netlify-identity-widget',
+    "gatsby-plugin-netlify-identity-widget",
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-material-ui`,
@@ -44,8 +44,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `appetizers`,
-        path: `${__dirname}/content/Appetizers`,
+        name: `sideDish`,
+        path: `${__dirname}/content/sideDish`,
       },
     },
 
@@ -60,16 +60,25 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `soup`,
+        path: `${__dirname}/content/Soup`,
+      },
+    },
+
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `rice`,
         path: `${__dirname}/content/Rice`,
       },
     },
 
     {
-      resolve: 'gatsby-background-image',
+      resolve: "gatsby-background-image",
       options: {
         // add your own characters to escape, replacing the default ':/'
-        specialChars: '/:',
+        specialChars: "/:",
       },
     },
     `gatsby-transformer-sharp`,

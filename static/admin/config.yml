@@ -37,9 +37,9 @@ collections:
           value_type: "float",
         }
       - { label: "Short Description", name: "body", widget: "markdown" }
-  - name: "appetizers"
-    label: "Appetizers"
-    folder: "content/Appetizers"
+  - name: "sideDish"
+    label: "Side Dish"
+    folder: "content/sideDish"
     create: true
     media_folder: ""
     public_folder: ""
@@ -73,6 +73,32 @@ collections:
           name: "price",
           widget: "number",
           value_type: "float",
+        }
+      - { label: "Short Description", name: "body", widget: "markdown" }
+  - name: "soup"
+    label: "Soup"
+    folder: "content/Soup"
+    create: true
+    media_folder: ""
+    public_folder: ""
+    path: "{{title}}/index"
+    editor:
+      preview: true
+    fields:
+      - { label: "Item Number", name: "itemnumber", widget: "string" }
+      - { label: "Name", name: "title", widget: "string" }
+      - {
+          label: "Regular Price (Number Only)",
+          name: "reg-price",
+          widget: "number",
+          value_type: "float",
+        }
+      - {
+          label: "Large Price (Number Only)",
+          name: "large-price",
+          widget: "number",
+          value_type: "float",
+          required: false,
         }
       - { label: "Short Description", name: "body", widget: "markdown" }
   - name: "chickenspecialties"

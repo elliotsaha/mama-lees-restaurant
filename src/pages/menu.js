@@ -180,8 +180,8 @@ export default function Menu() {
         }
       }
 
-      appetizers: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/(content)/(Appetizers)/" } }
+      sideDish: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/(content)/(sideDish)/" } }
         sort: { fields: [frontmatter___itemnumber], order: ASC }
       ) {
         edges {
@@ -199,6 +199,25 @@ export default function Menu() {
       chickenspecialties: allMarkdownRemark(
         filter: {
           fileAbsolutePath: { regex: "/(content)/(ChickenSpecialties)/" }
+        }
+        sort: { fields: [frontmatter___itemnumber], order: ASC }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              price
+              itemnumber
+              halfprice
+            }
+            rawMarkdownBody
+          }
+        }
+      }
+
+      soup: allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: { regex: "/(content)/(soup)/" }
         }
         sort: { fields: [frontmatter___itemnumber], order: ASC }
       ) {
@@ -362,8 +381,43 @@ export default function Menu() {
               })}
             </div>
             <div>
-              <div className={classes.subName}>Appetizers</div>
-              {data.appetizers.edges.map(obj => {
+              <div className={classes.subName}>Side Dish</div>
+              {data.sideDish.edges.map(obj => {
+                const price = obj.node.frontmatter.price
+                return (
+                  <div
+                    key={obj.node.frontmatter.title}
+                    className={classes.foodItemContainer}
+                  >
+                    <div className={classes.foodItem}>
+                      <div className={classes.foodItemTitleContainer}>
+                        <div className={classes.foodTitle}>
+                          {obj.node.frontmatter.title}
+                        </div>
+                        <div className={classes.foodItemPrice}>
+                          ${price.toFixed(2)}
+                        </div>
+                      </div>
+
+                      <div className={classes.foodItemNumber}>
+                        {obj.node.frontmatter.itemnumber}
+                      </div>
+                      <div>
+                        <div className={classes.foodMarkdownBody}>
+                          {obj.node.rawMarkdownBody}
+                        </div>
+                      </div>
+                      <div>
+                        <hr className={classes.bar} />
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+            <div>
+              <div className={classes.subName}>Soup</div>
+              {data.soup.edges.map(obj => {
                 const price = obj.node.frontmatter.price
                 return (
                   <div
