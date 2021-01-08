@@ -1,6 +1,6 @@
 ---
-itemnumber: A6
+itemnumber: A5
 title: Kimchi Pancake
 price: 9.9
 ---
-A Korean pancake made using Kimchi, ground pork, and a flour batter
+Korean Pancake with Kimchi
