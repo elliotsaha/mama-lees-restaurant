@@ -1,6 +1,7 @@
 ---
 itemnumber: C3
-title: Popcorn chicken
-price: 13.9
+title: Hot Spicy Chicken
+price: 16.9
+halfprice: 30.9
 ---
-Bite-sized pieces of fried chicken coated in a sweet and spicy sauce
+Fried chicken with Seasoned Very Spicy Sauce
