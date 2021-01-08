@@ -1,6 +1,6 @@
 ---
-itemnumber: C5
+itemnumber: C6
 title: Steamed chicken
 price: 29.9
 ---
-Chicken, rice cakes, scallions, onions, glass noodles, carrots, cabbage, and ginger steamed together.
+Marinated Chicken and Rice Cake Cooked with Assorted Vegetables
