@@ -336,6 +336,50 @@ export default function PanelFour() {
               )
             })}
           </div>
+          <div>
+            <div className={classes.subName}>Soup</div>
+            {data.soup.edges.map((obj: any) => {
+              console.log(obj.node.frontmatter)
+              const price = obj.node.frontmatter.regprice
+              const largePrice = obj.node.frontmatter.largeprice
+              return (
+                <div
+                  key={obj.node.frontmatter.title}
+                  className={classes.foodItemContainer}
+                >
+                  <div className={classes.foodItem}>
+                    <div className={classes.foodItemTitleContainer}>
+                      <div className={classes.foodTitle}>
+                        {obj.node.frontmatter.title}
+                      </div>
+                      <div className={classes.foodItemPrice}>
+                        ${price.toFixed(2)} <br />
+                      </div>
+                    </div>
+
+                    <div className={classes.foodItemNumber}>
+                      {obj.node.frontmatter.itemnumber}
+                    </div>
+                    <div>
+                      <div className={classes.foodMarkdownBody}>
+                        {obj.node.rawMarkdownBody}
+                        {obj.node.frontmatter.largeprice ? (
+                          <div className={classes.half}>
+                            Large For ${largePrice.toFixed(2)}
+                          </div>
+                        ) : (
+                          <span></span>
+                        )}
+                      </div>
+                    </div>
+                    <div>
+                      <hr className={classes.bar} />
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
         </div>
 
         <div>
@@ -408,50 +452,6 @@ export default function PanelFour() {
                     <div>
                       <div className={classes.foodMarkdownBody}>
                         {obj.node.rawMarkdownBody}
-                      </div>
-                    </div>
-                    <div>
-                      <hr className={classes.bar} />
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-          <div>
-            <div className={classes.subName}>Soup</div>
-            {data.soup.edges.map((obj: any) => {
-              console.log(obj.node.frontmatter)
-              const price = obj.node.frontmatter.regprice
-              const largePrice = obj.node.frontmatter.largeprice
-              return (
-                <div
-                  key={obj.node.frontmatter.title}
-                  className={classes.foodItemContainer}
-                >
-                  <div className={classes.foodItem}>
-                    <div className={classes.foodItemTitleContainer}>
-                      <div className={classes.foodTitle}>
-                        {obj.node.frontmatter.title}
-                      </div>
-                      <div className={classes.foodItemPrice}>
-                        ${price.toFixed(2)} <br />
-                      </div>
-                    </div>
-
-                    <div className={classes.foodItemNumber}>
-                      {obj.node.frontmatter.itemnumber}
-                    </div>
-                    <div>
-                      <div className={classes.foodMarkdownBody}>
-                        {obj.node.rawMarkdownBody}
-                        {obj.node.frontmatter.largeprice ? (
-                          <div className={classes.half}>
-                            Large For ${largePrice.toFixed(2)}
-                          </div>
-                        ) : (
-                          <span></span>
-                        )}
                       </div>
                     </div>
                     <div>
