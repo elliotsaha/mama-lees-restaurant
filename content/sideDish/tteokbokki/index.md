@@ -1,6 +1,6 @@
 ---
 itemnumber: A3
-title: Tteokbokki
+title: Tteok Bok Ki
 price: 10.9
 ---
-Rice cakes, fishcake, & vegetables stewed in a spicy sauce
+Spicy Rice Cake, Fishcake and Vegetables
