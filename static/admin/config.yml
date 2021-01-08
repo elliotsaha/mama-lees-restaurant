@@ -36,6 +36,13 @@ collections:
           widget: "number",
           value_type: "float",
         }
+      - {
+          label: "Double Price (Number Only)",
+          name: "doubleprice",
+          widget: "number",
+          value_type: "float",
+          required: false,
+        }
       - { label: "Short Description", name: "body", widget: "markdown" }
   - name: "sideDish"
     label: "Side Dish"
@@ -89,13 +96,13 @@ collections:
       - { label: "Name", name: "title", widget: "string" }
       - {
           label: "Regular Price (Number Only)",
-          name: "reg-price",
+          name: "regprice",
           widget: "number",
           value_type: "float",
         }
       - {
           label: "Large Price (Number Only)",
-          name: "large-price",
+          name: "largeprice",
           widget: "number",
           value_type: "float",
           required: false,

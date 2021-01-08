@@ -171,6 +171,7 @@ export default function PanelFour() {
             frontmatter {
               title
               price
+              doubleprice
               itemnumber
             }
             rawMarkdownBody
@@ -214,16 +215,16 @@ export default function PanelFour() {
       }
 
       soup: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/(content)/(soup)/" } }
+        filter: { fileAbsolutePath: { regex: "/(content)/(Soup)/" } }
         sort: { fields: [frontmatter___itemnumber], order: ASC }
       ) {
         edges {
           node {
             frontmatter {
               title
-              price
+              regprice
+              largeprice
               itemnumber
-              halfprice
             }
             rawMarkdownBody
           }
@@ -261,6 +262,7 @@ export default function PanelFour() {
             <div className={classes.subName}>Bento</div>
             {data.bento.edges.map((obj: any) => {
               const price = obj.node.frontmatter.price
+              const doubleprice = obj.node.frontmatter.doubleprice
               return (
                 <div
                   key={obj.node.frontmatter.title}
@@ -282,6 +284,13 @@ export default function PanelFour() {
                     <div>
                       <div className={classes.foodMarkdownBody}>
                         {obj.node.rawMarkdownBody}
+                        {obj.node.frontmatter.doubleprice ? (
+                          <div className={classes.half}>
+                            Double For ${doubleprice.toFixed(2)}
+                          </div>
+                        ) : (
+                          <span></span>
+                        )}
                       </div>
                     </div>
                     <div>
@@ -412,8 +421,9 @@ export default function PanelFour() {
           <div>
             <div className={classes.subName}>Soup</div>
             {data.soup.edges.map((obj: any) => {
-              const price = obj.node.frontmatter["reg-price"]
-              const largePrice = obj.node.frontmatter["large-price"]
+              console.log(obj.node.frontmatter)
+              const price = obj.node.frontmatter.regprice
+              const largePrice = obj.node.frontmatter.largeprice
               return (
                 <div
                   key={obj.node.frontmatter.title}
@@ -425,8 +435,7 @@ export default function PanelFour() {
                         {obj.node.frontmatter.title}
                       </div>
                       <div className={classes.foodItemPrice}>
-                        Normal: ${price.toFixed(2)} <br />
-                        Large: ${largePrice.toFixed(2)}
+                        ${price.toFixed(2)} <br />
                       </div>
                     </div>
 
@@ -436,6 +445,13 @@ export default function PanelFour() {
                     <div>
                       <div className={classes.foodMarkdownBody}>
                         {obj.node.rawMarkdownBody}
+                        {obj.node.frontmatter.largeprice ? (
+                          <div className={classes.half}>
+                            Large For ${largePrice.toFixed(2)}
+                          </div>
+                        ) : (
+                          <span></span>
+                        )}
                       </div>
                     </div>
                     <div>
