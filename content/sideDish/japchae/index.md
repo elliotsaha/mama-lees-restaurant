@@ -1,6 +1,6 @@
 ---
-itemnumber: A7
+itemnumber: A3
 title: Japchae
 price: 14.9
 ---
-Glass noodles flavoured with soy sauce and stir-fried vegetables
+Stir-fried Glass Noodles with Beef & Vegetables
