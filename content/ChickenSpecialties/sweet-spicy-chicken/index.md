@@ -1,7 +1,7 @@
 ---
-itemnumber: C1
+itemnumber: C2
 title: Sweet & spicy chicken
-price: 31.9
+price: 30.9
 halfprice: 16.9
 ---
-Deep-fried chicken coated in a sweet & spicy sauce
+Fried chicken coated with seasonal sweet & spicy sauce
