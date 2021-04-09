@@ -46,7 +46,6 @@ const useStyles = makeStyles(theme =>
     },
     link: {
       color: "white",
-        
     },
   })
 )
@@ -69,7 +68,7 @@ export default function Footer() {
           TEL: (780) 498-1222
           <br />
           Mon-Sat: 11:00-8:00
-          <br/>
+          <br />
           Sun: Closed
         </div>
         <div className={classes.textBlocks}>
@@ -98,6 +97,15 @@ export default function Footer() {
             rel="noopener noreferrer"
           >
             Uber Eats
+          </a>
+          <br />
+          <a
+            className={classes.link}
+            href="https://www.ritual.co/order/mama-lees-kitchen-51-106-edmonton/4ff3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ritual
           </a>
         </div>
         <div>

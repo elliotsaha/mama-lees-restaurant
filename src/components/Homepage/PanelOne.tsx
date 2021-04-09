@@ -87,10 +87,9 @@ const useStyles = makeStyles(theme =>
       position: "absolute",
       bottom: "3rem",
       [theme.breakpoints.down(400)]: {
-        fontSize: '0.9rem',
+        fontSize: "0.9rem",
         marginLeft: "0.6rem",
         marginRight: "0.6rem",
-
       },
     },
   })
@@ -113,6 +112,13 @@ export default function PanelOne(): JSX.Element {
         }
       }
       ubereats: file(relativePath: { eq: "ubereats.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000, quality: 65) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      ritual: file(relativePath: { eq: "ritual.png" }) {
         childImageSharp {
           fluid(maxWidth: 2000, quality: 65) {
             ...GatsbyImageSharpFluid_withWebp
@@ -175,6 +181,16 @@ export default function PanelOne(): JSX.Element {
             >
               <Img
                 fluid={data.skipthedishes.childImageSharp.fluid}
+                className={classes.icon}
+              />
+            </a>
+            <a
+              href="https://www.ritual.co/order/mama-lees-kitchen-51-106-edmonton/4ff3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Img
+                fluid={data.ritual.childImageSharp.fluid}
                 className={classes.icon}
               />
             </a>
